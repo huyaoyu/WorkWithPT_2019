@@ -1,0 +1,8 @@
+*.pyc
+data/
+*.code-workspace
+*.dat
+*.png
+*.jpg
+VAESample/results/
+
