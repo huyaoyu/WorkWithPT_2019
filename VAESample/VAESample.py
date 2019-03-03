@@ -3,6 +3,8 @@
 
 from __future__ import print_function
 import argparse
+import os
+
 import torch
 import torch.utils.data
 from torch import nn, optim
@@ -128,6 +130,10 @@ def test(epoch):
     print('====> Test set loss: {:.4f}'.format(test_loss))
 
 if __name__ == "__main__":
+    # Test if the results folder exists.
+    if ( False == os.path.isdir("./results") ):
+        os.makedirs("./resutls")
+
     for epoch in range(1, args.epochs + 1):
         train(epoch)
         test(epoch)
